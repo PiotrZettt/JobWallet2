@@ -17,4 +17,4 @@ Next thing to do is an ability of inputting multiple parts at a time. At the mom
 In the main application folder run: % python manage.py runserver 
 
 Demo
-http://piotrzet.pythonanywhere.com/records/
+https://piotrzet.pythonanywhere.com/records/
