@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container">
+  <h1 style="text-align:right; font-family:Arial-Black" >ORDER NUMBER:  {{ wallet.order_number }} </h1>
+  <hr>
+
+<p><strong>Customer: {{ wallet.customer_name}}</strong></p>
+<p><strong>FG Code: {{ wallet.part_FG}}</strong></p>
+<p><strong>{{ wallet.part_FG.description}}</strong></p>
+<p><strong>Part ID: {{ wallet.part_id}}</strong></p>
+<p><strong>Pack Number: {{ wallet.pack_number}}</strong></p>
+
+{% if wallet.wallet_parts.all %}
+
+{% for part in wallet.wallet_parts.all %}
+ <hr>
+    <p class="p-serials"><a href="{{ part.get_absolute_url }}">{{ part.serial_number }}</a></p>
+
+
+
+
+{% endfor %}
+{% endif %}
+{% endblock %}
+        </div>
+
+<div id="root">
+<script defer="defer" src="../frontend/src/index.js"></script>
+
+</div>

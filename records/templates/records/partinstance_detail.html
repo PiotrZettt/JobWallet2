@@ -1,0 +1,34 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container">
+  <h1> Serial Number: {{ partinstance.serial_number }}</h1>
+  <h2> {{ partinstance.part_origin}}</h2>
+    <h2> {{ partinstance.part_origin.customer }}</h2>
+    <h2> {{ partinstance.part_origin.description }}</h2>
+
+  <p><strong>Operations:</strong> </p>
+
+
+  {% if partinstance.operations.all %}
+    <a href="{% url 'add_operation_to_part' pk=partinstance.pk %}">Add/Sign New Operation</a>
+
+  {% for op in partinstance.operations.all %}
+
+  <hr>
+ <h3>{{ op.operation_name }}</h3>
+  <p><strong>Status:</strong>  {{ op.operation_status }}</p>
+  <p><strong>Operator:</strong>  {{op.operator }}</p>
+  <p><strong>Comments:</strong>  {{ op.comments }}</p>
+  <p><strong>Date:</strong> {{ op.date_signed }}</p>
+
+
+  {% endfor %}
+
+  {% else %}
+  <p>There are no operation records for this part.</p>
+    <a href="{% url 'add_operation_to_part' pk=partinstance.pk %}">Add/Sign New Operation</a>
+  {% endif %}
+
+{% endblock %}
+    </div>

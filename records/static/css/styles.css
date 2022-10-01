@@ -1,0 +1,37 @@
+.nav-text {
+    color: white;
+}
+
+hr {
+    height: 2px;
+    width: 70%;
+    background: teal;
+    margin: 20px 100;
+}
+
+.button-center {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+p {
+  color: dark-grey;
+  text-align: center;
+}
+
+h3 {
+  color: dark-grey;
+  text-align: center;
+}
+
+.p-serials {
+    text-align: left
+}
+
+.main-title {
+    text-align: center;
+    font-family: arial;
+}

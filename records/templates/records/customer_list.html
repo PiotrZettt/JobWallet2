@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1 style="text-align:center">Customers</h1>
+  {% if customer_list %}
+
+    {% for customer in customer_list %}
+      <hr>
+      <h3><a href="{{ customer.get_absolute_url }}">{{ customer }} </a></h3>
+
+    {% endfor %}
+
+  {% else %}
+    <p>There are no Job Wallets in the records.</p>
+  {% endif %}
+{% endblock %}l>

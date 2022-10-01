@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+<body>
+    <form class="form-control form-control-sm" action="templates/form" method="post" accept-charset="utf-8">
+        {{ form.as_p }}
+        <label>Operator:</label>  {{ user }}
+        <input type="submit" value="{{ form.save }}"/>
+    </form>
+</body>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1 style="text-align:center"}>Operation List</h1>
+  {% if operation_list %}
+  <ul>
+    {% for entry in operation_list %}
+      <li>
+        <a href="{{ entry.get_absolute_url }}">{{ entry.operation_name }}</a>
+        ({{entry.part.FGcode}}, {{entry.part.description}}, {{entry.part.serial_number}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no parts in the records.</p>
+  {% endif %} 
+{% endblock %}

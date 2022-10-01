@@ -1,0 +1,44 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1 style="text-align:center">{{ customer }} </h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <p><strong>Parts:</strong></p>
+
+      {% if customer.part_set.all %}
+
+      {% for part in customer.part_set.all %}
+
+      <hr>
+      <p><a href="{{ part.get_absolute_url }}">{{ part }} {{ part.description }}</a></p>
+
+      {% endfor %}
+
+      {% else %}
+      <p>There are no {{ part.FGcode }} {{ part.customer }} {{ part.description }} parts in the records.</p>
+      {% endif %}
+    </div>
+
+    <div class="col-sm">
+
+      <p><strong>Wallets:</strong></p>
+      {% if customer.wallets.all %}
+
+      {% for wallet in customer.wallets.all %}
+
+      <hr>
+      <p><a href="{{ wallet.get_absolute_url }}">{{ wallet.part_FG }} Number: {{ wallet }}</a></p>
+
+      {% endfor %}
+
+      {% else %}
+      <p>There are no {{ wallet.customer_name }} wallets in the records.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}k %}l>tml>

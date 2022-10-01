@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1 style="text-align:center">Wallets</h1>
+  {% if wallet_list %}
+
+    {% for wallet in wallet_list %}
+      <hr>
+      <p><a href="{{ wallet.get_absolute_url }}">{{ wallet.customer_name }}  {{ wallet.part_FG }}  <strong>{{ wallet }}</strong></a></p>
+
+    {% endfor %}
+
+  {% else %}
+    <p>There are no Job Wallets in the records.</p>
+  {% endif %}
+<div id="root">
+
+</div>
+<script defer="defer" src="../frontend/src/index.js"></script>
+{% endblock %}l>

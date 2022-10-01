@@ -1,0 +1,53 @@
+{% extends "base_generic.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<h1 style="text-align:center">{{ customer.customer }} </h1>
+<p><strong>Create Job Wallet</strong></p>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                {{ form.customer_name|as_crispy_field }}
+                <div class="mt-4">
+                    {{ form.part_FG|as_crispy_field }}
+                </div>
+            </div>
+
+            <div class="mb-4">
+                {{ form.order_number|as_crispy_field }}
+
+                {{ form.order_quantity|as_crispy_field }}
+
+                <div class="mt-4">
+                    {{ form.traceability_required|as_crispy_field }}
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="mb-4">
+                    {{ form.part_id|as_crispy_field }}
+
+                    {{ form.pack_number|as_crispy_field }}
+
+                </div>
+            </div>
+        </div>
+
+            <div class="vertical-center">
+                <button class="btn-outline-secondary" type="submit">Create</button>
+            </div>
+
+    </div>
+
+</form>
+<div class="container">
+    <p style="text-align: right">* Required fields</p>
+</div>
+
+{% endblock %}
+

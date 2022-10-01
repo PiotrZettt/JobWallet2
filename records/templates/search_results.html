@@ -1,0 +1,20 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Parts</title>{% endblock %}
+
+{% block content %}
+  <h1 style="text-align:center">Parts </h1>
+
+  {% if parts %}
+
+    {% for part in parts %}
+    <p><a href="{{ part.get_absolute_url }}">{{ part.serial_number }} </a>{{ part.part_origin }} </p>
+    {% endfor %}
+
+  {% else %}
+
+    <p>No results found</p>
+
+  {% endif %}
+
+{% endblock %}

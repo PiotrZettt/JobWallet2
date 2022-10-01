@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+
+{% block content %}
+<div class="container">
+  <h1 style="text-align:center">Parts List</h1>
+  {% if part_list %}
+  <ul>
+    {% for part in part_list %}
+
+      <li>{{part.customer }}  <a href="{{ part.get_absolute_url }}">{{part.FGcode}}</a>
+        ({{part.description}})
+        <hr>
+      </li>
+
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no parts in the records.</p>
+  {% endif %}
+{% endblock %}
+  </div>

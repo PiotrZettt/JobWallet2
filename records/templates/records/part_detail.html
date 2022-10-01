@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1 style="text-align:center">{{ part.customer }} {{ part.description }}</h1>
+
+  <p><strong>Customer:</strong> <a href="{{ part.customer.get_absolute_url }}">{{ part.customer}}</a> <!-- author detail link not yet defined -->
+  <p><strong>FGcode:</strong> {{ part.FGcode }}</p>
+  <p>See operations details</p>
+  <p><strong>Serial Number:</strong></p>
+
+
+  {% if part.parts.all %}
+
+  {% for part in part.parts.all %}
+
+  <hr>
+  <p><a href="{{ part.get_absolute_url }}">{{ part.serial_number }}</a></p>
+
+  {% endfor %}
+
+  {% else %}
+  <p>There are no {{ part.FGcode }} {{ part.customer }} {{ part.description }} parts in the records.</p>
+  {% endif %}
+{% endblock %}

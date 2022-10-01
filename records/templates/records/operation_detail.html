@@ -1,0 +1,10 @@
+{% block content %}
+  <h1>{{ operation.operation_name }} </h1>
+
+  <p><strong>Operation:</strong> <a href="{{ part.operation.get_absolute_url }}"></a>{{ operation.operation_name }}</p> <!-- author detail link not yet defined -->
+  <p><strong>Date:</strong> {{ operation.date_signed }}</p>
+  <p><strong>Operator:</strong> {{ operation.operator }}</p>
+  <p><strong>Status</strong> {{ operation.operation_status}}</p>
+  <p><strong>Comments:</strong> {{ operation.comments }}</p>
+
+{% endblock %}l>
