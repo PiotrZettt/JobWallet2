@@ -14,8 +14,14 @@ The project has been built with Django framework. It also utilises Bootstrap4
 Next thing to do is an ability of inputting multiple parts at a time. At the moment the input of each part has to be confirmed with the "sign" button.
 
 ## How to run
-In the main application folder run: 
+In the main application folder run:
+
 python manage.py runserver 
+
+To create admin account run:
+
+python manage.py createsuperuser
+
 
 Demo
 https://piotrzet.pythonanywhere.com/records/
