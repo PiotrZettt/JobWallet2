@@ -6,4 +6,4 @@ django-restframework==0.0.1
 djangorestframework==3.13.1
 pytz==2022.1
 sqlparse==0.4.2
-decouple~=0.0.7
+python-decouple==3.6
