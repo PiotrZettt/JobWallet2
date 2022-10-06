@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config(SECRET_KEY)
+SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = True
 
@@ -43,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'records',
     'api',
-    'corsheaders',
     'rest_framework',
     # 'rest_auth',
     # 'allauth',
@@ -63,7 +63,6 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'records.middleware.DisableBrowserCacheMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
