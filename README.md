@@ -28,9 +28,9 @@ Create a virtual environment for the project:
 
 ```python3 -m venv <your_env_name>```
 
-Change directory to the brandlive Django app:
+Change directory to the JobWallet Django app:
 
-```cd brandlive```
+```cd JobWallet```
 
 Install all requirements by:
 ```pip install -r requirements.txt```
